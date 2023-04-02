@@ -27,11 +27,11 @@ public class Service {
     public int saveStudent(String id, String nume, int grupa) {
         Student student = new Student(id, nume, grupa);
         Student result = studentXmlRepo.save(student);
-
-        if (result == null) {
+        System.out.println(result + " in save");
+        if (result == null) { //if not good =)
             return 1;
         }
-        return 0;
+        return 0; // if good
     }
 
     public int saveTema(String id, String descriere, int deadline, int startline) {

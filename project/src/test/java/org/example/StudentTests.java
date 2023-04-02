@@ -21,7 +21,7 @@ public class StudentTests {
     public void ValidIdTest( )
     {
         String id = "68";
-        int response =service.saveStudent(id,"Jana",888);
+        int response =service.saveStudent(id,"validIdTest",988);
         Assert.assertEquals(0, response);
 
     }
@@ -39,15 +39,33 @@ public class StudentTests {
     public void ValidGroupTest( )
     {
         int group = 933;
-        int response =service.saveStudent("11","Jana",group);
+        int response =service.saveStudent("12","ValidGroupTest",group);
         Assert.assertEquals(0, response);
 
     }
 
     @Test
-    public void InValidGroupTest( )
+    public void InValidGroupTestNatural( )
     {
         int group = -65;
+        int response =service.saveStudent("12","ana",group);
+        Assert.assertEquals(1, response);
+
+    }
+
+    @Test
+    public void InValidGroupTestWithinParams( )
+    {
+        int group = 1000;
+        int response =service.saveStudent("12","ana",group);
+        Assert.assertEquals(1, response);
+
+    }
+
+    @Test
+    public void InValidGroupTestWithinParams2( )
+    {
+        int group = 10;
         int response =service.saveStudent("12","ana",group);
         Assert.assertEquals(1, response);
 
@@ -65,9 +83,9 @@ public class StudentTests {
     @Test
     public void ValidNameTest( )
     {
-        String name = "Anda";
-        int response =service.saveStudent("11",name,768);
-        Assert.assertEquals(1, response);
+        String name = "ValidNameTest";
+        int response =service.saveStudent("13",name,933);
+        Assert.assertEquals(0, response);
 
     }
 
