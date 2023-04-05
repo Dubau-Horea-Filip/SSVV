@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-04-05T14:16:51 EEST" name="Surefire suite" finished-at="2023-04-05T14:16:51 EEST" duration-ms="178">
+    <groups>
+    </groups>
+    <test started-at="2023-04-05T14:16:51 EEST" name="Surefire test" finished-at="2023-04-05T14:16:51 EEST" duration-ms="178">
+      <class name="org.example.StudentTests">
+        <test-method signature="InValidGroupTestNatural()[pri:0, instance:org.example.StudentTests@27c86f2d]" started-at="2023-04-05T14:16:51 EEST" name="InValidGroupTestNatural" finished-at="2023-04-05T14:16:51 EEST" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InValidGroupTestNatural -->
+        <test-method signature="InValidGroupTestWithinParams()[pri:0, instance:org.example.StudentTests@27c86f2d]" started-at="2023-04-05T14:16:51 EEST" name="InValidGroupTestWithinParams" finished-at="2023-04-05T14:16:51 EEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InValidGroupTestWithinParams -->
+        <test-method signature="InValidGroupTestWithinParams2()[pri:0, instance:org.example.StudentTests@27c86f2d]" started-at="2023-04-05T14:16:51 EEST" name="InValidGroupTestWithinParams2" finished-at="2023-04-05T14:16:51 EEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InValidGroupTestWithinParams2 -->
+        <test-method signature="InValidIdTest()[pri:0, instance:org.example.StudentTests@27c86f2d]" started-at="2023-04-05T14:16:51 EEST" name="InValidIdTest" finished-at="2023-04-05T14:16:51 EEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InValidIdTest -->
+        <test-method signature="InValidNameTest()[pri:0, instance:org.example.StudentTests@27c86f2d]" started-at="2023-04-05T14:16:51 EEST" name="InValidNameTest" finished-at="2023-04-05T14:16:51 EEST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InValidNameTest -->
+        <test-method signature="ValidGroupTest()[pri:0, instance:org.example.StudentTests@27c86f2d]" started-at="2023-04-05T14:16:51 EEST" name="ValidGroupTest" finished-at="2023-04-05T14:16:51 EEST" duration-ms="81" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidGroupTest -->
+        <test-method signature="ValidIdTest()[pri:0, instance:org.example.StudentTests@27c86f2d]" started-at="2023-04-05T14:16:51 EEST" name="ValidIdTest" finished-at="2023-04-05T14:16:51 EEST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidIdTest -->
+        <test-method signature="ValidNameTest()[pri:0, instance:org.example.StudentTests@27c86f2d]" started-at="2023-04-05T14:16:51 EEST" name="ValidNameTest" finished-at="2023-04-05T14:16:51 EEST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidNameTest -->
+      </class> <!-- org.example.StudentTests -->
+      <class name="org.example.TemaTests">
+        <test-method signature="InvalidTemaDeadline()[pri:0, instance:org.example.TemaTests@2133814f]" started-at="2023-04-05T14:16:51 EEST" name="InvalidTemaDeadline" finished-at="2023-04-05T14:16:51 EEST" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InvalidTemaDeadline -->
+        <test-method signature="ValidTema()[pri:0, instance:org.example.TemaTests@2133814f]" started-at="2023-04-05T14:16:51 EEST" name="ValidTema" finished-at="2023-04-05T14:16:51 EEST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidTema -->
+      </class> <!-- org.example.TemaTests -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
