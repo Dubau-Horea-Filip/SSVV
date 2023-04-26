@@ -42,13 +42,13 @@ public class TemaTests {
 
     @Test
     public void AddAssignmentDescriptionNull() {
-        int response = service.saveTema("A1", null, 15, 5);
+        int response = service.saveTema("A1", null, 10, 5);
         assertEquals(1, response);
     }
 
     @Test
     public void AddAssignmentDescriptionEmpty() {
-        int response = service.saveTema("A1", "", 7, 5);
+        int response = service.saveTema("A1", "", 10, 5);
         assertEquals(1, response);
     }
 

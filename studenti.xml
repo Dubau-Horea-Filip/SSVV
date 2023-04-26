@@ -4,4 +4,8 @@
         <Nume>Filip</Nume>
         <Grupa>933</Grupa>
     </student>
+    <student ID="13">
+        <Nume>ValidNameTest</Nume>
+        <Grupa>933</Grupa>
+    </student>
 </Entitati>

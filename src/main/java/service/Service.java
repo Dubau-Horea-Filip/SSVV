@@ -46,7 +46,7 @@ public class Service {
 
     public int saveNota(String idStudent, String idTema, double valNota, int predata, String feedback) {
         if (studentXmlRepo.findOne(idStudent) == null || temaXmlRepo.findOne(idTema) == null) {
-            return -1;
+            return -1; // id tema sau student inexistent
         }
         else {
             int deadline = temaXmlRepo.findOne(idTema).getDeadline();
@@ -56,7 +56,9 @@ public class Service {
             } else {
                 valNota =  valNota - 2.5 * (predata - deadline);
             }
-            Nota nota = new Nota(new Pair(idStudent, idTema), valNota, predata, feedback);
+            if( valNota <= 0 ) valNota =1;  // modification
+            Nota nota = new Nota(new Pair<>(idStudent, idTema), valNota, predata, feedback);
+            System.out.println(nota + "in service");
             Nota result = notaXmlRepo.save(nota);
 
             if (result == null) {
