@@ -1,6 +1,5 @@
 package org.example;
 import domain.*;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
@@ -9,33 +8,15 @@ import repository.NotaXMLRepository;
 import repository.StudentXMLRepository;
 import repository.TemaXMLRepository;
 import service.Service;
-import validation.*;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import domain.Student;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.ArgumentMatchers;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-
 import validation.NotaValidator;
 import validation.StudentValidator;
 import validation.TemaValidator;
-
-import java.time.LocalDate;
-import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
-
-import static org.junit.Assert.assertNull;
-import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class IncrementalIntegrationTests {
@@ -63,7 +44,7 @@ public class IncrementalIntegrationTests {
 
 
     @Test
-    public void studentGiven_addStudent_studentAdded() {
+    public void saveStudentTest() {
         // given
         Student student = new Student("1", "Filip", 933);
         when(studentXMLRepo.save(ArgumentMatchers.any(Student.class))).thenReturn(null);
@@ -79,7 +60,7 @@ public class IncrementalIntegrationTests {
 
 
     @Test
-    public void saveAssignment() {
+    public void saveAssignmentTest() {
         Student student = new Student("2", "Anda", 933);
         when(studentXMLRepo.save(ArgumentMatchers.any(Student.class))).thenReturn(null);
 
@@ -98,7 +79,7 @@ public class IncrementalIntegrationTests {
     }
 
     @Test
-    public void saveGrade() {
+    public void saveGradeTest() {
         Student student = new Student("2", "Anda", 933);
         when(studentXMLRepo.save(ArgumentMatchers.any(Student.class))).thenReturn(null);
 
