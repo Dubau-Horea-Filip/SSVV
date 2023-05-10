@@ -1,8 +1,11 @@
 package org.example;
 import domain.*;
+import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
+import org.mockito.MockitoAnnotations;
 import org.testng.Assert;
 import repository.NotaXMLRepository;
 import repository.StudentXMLRepository;
@@ -18,16 +21,16 @@ import validation.TemaValidator;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
 public class IncrementalIntegrationTests {
+    //org.example.IncrementalIntegrationTests
+    @Mock
+    private TemaXMLRepository temaXMLRepo;
+
     @Mock
     private StudentXMLRepository studentXMLRepo;
 
     @Mock
     private StudentValidator studentValidator;
-
-    @Mock
-    private TemaXMLRepository temaXMLRepo;
 
     @Mock
     private TemaValidator temaValidator;
@@ -38,13 +41,19 @@ public class IncrementalIntegrationTests {
     @Mock
     private NotaValidator notaValidator;
 
-    @InjectMocks
     private Service service;
 
+ @BeforeEach
+ public void setuo()
+ {
+     MockitoAnnotations.initMocks(this);
+     service = new Service(studentXMLRepo,temaXMLRepo,notaXMLRepo);
+ }
 
 
     @Test
     public void saveStudentTest() {
+        //org.example.IncrementalIntegrationTests.saveStudentTest
         // given
         Student student = new Student("1", "Filip", 933);
         when(studentXMLRepo.save(ArgumentMatchers.any(Student.class))).thenReturn(null);
