@@ -12,8 +12,4 @@
         <Nume>ValidNameTest</Nume>
         <Grupa>933</Grupa>
     </student>
-    <student ID="68">
-        <Nume>validIdTest</Nume>
-        <Grupa>988</Grupa>
-    </student>
 </Entitati>
