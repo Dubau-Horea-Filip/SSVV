@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 public class HappyFeelings {
     public static void main(String[] args) {
-        int[] array = {-1, -1, 0, 0, 1, 1, -1, 1, 0, -1, 1, 0, 1, 1, -1, 0, 1, 1};
+        int[] array = {1, 0, 1, 0,1, -1, 1};
+       // int[] array = {-1, -1, 0, 0, 1, 1, -1, 1, 0, -1, 1, 0, 1, 1, -1,1, 0, 1, 1};
         int[] result = BeHappy(array);
         System.out.println(Arrays.toString(result));
     }
@@ -21,32 +22,32 @@ public class HappyFeelings {
 
     //2) CheckNeighbours = check neighbours of a given position i given
     // (if value on position i is -1 and has no happy feelings as neighbours)
-    // true means elmentul de pe poz este minus 1 si are vecini fericiti
-    // false means otherwise
+    // false means we have to put 1
+    // true  means  we dont have to put 1
     public static boolean CheckNeighbours(int[] array, int position) {
+        if (array.length == 0)
+            return true;
         if (array[position] == -1) {
-            if (position > 0) {
+            if (position > 0)
+            {
+
                 int prev = array[position - 1];
-                if (prev != -1) {
-                    return false; // Previous element is not -1, so it's a happy feeling
-                }
-            } else {
-                return false; // First element, so it's a happy feeling
-            }
+                if (prev != 1)  return false; // Previous element is not -1,
+
+            } else return false; // First element, so we have to put 1
+
+
 
             if (position < array.length - 1) {
                 int next = array[position + 1];
-                if (next != -1) {
-                    return false; // Next element is not -1, so it's a happy feeling
-                }
+                if(next != 1)
+                return false; // Next element is not -1, so it's a happy feeling
             } else {
                 return false; // Last element, so it's a happy feeling
             }
-
-            return true; // Both neighbors are -1, indicating a sad feeling
         }
 
-        return false; // Positive value, so it's a happy feeling
+        return true; // Positive value, so it's a happy feeling
     }
 
 //3) InsertHappyFeelings before and after a given i position (value on position i is -1)
@@ -80,7 +81,9 @@ public class HappyFeelings {
             return array;
         }
 
-        array = InsertHappyFeelings(array, start);
+        if (!CheckNeighbours(array, start)) {
+            array = InsertHappyFeelings(array, start);
+        }
 
         while (true) {
             start = FindSadFeeling(array, start + 3);
