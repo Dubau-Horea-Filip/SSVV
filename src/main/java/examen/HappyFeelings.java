@@ -4,8 +4,7 @@ import java.util.Arrays;
 
 public class HappyFeelings {
     public static void main(String[] args) {
-        int[] array = {1, 0, 1, 0,1, -1, 1};
-       // int[] array = {-1, -1, 0, 0, 1, 1, -1, 1, 0, -1, 1, 0, 1, 1, -1,1, 0, 1, 1};
+        int[] array = {-1,0, -1, 0, 0, 1, 1,-1, 1, 0};
         int[] result = BeHappy(array);
         System.out.println(Arrays.toString(result));
     }
@@ -27,23 +26,24 @@ public class HappyFeelings {
     public static boolean CheckNeighbours(int[] array, int position) {
         if (array.length == 0)
             return true;
-        if (array[position] == -1) {
-            if (position > 0)
+        if (array[position] == -1) { //4
+            if (position > 0) //5
             {
 
-                int prev = array[position - 1];
-                if (prev != 1)  return false; // Previous element is not -1,
+                int prev = array[position - 1];  //6
+                if (prev != 1) //7
+                    return false; //8  // Previous element is not 1,
 
-            } else return false; // First element, so we have to put 1
+            } else return false;  // 9 // First element, so we have to put 1
 
 
 
-            if (position < array.length - 1) {
-                int next = array[position + 1];
-                if(next != 1)
-                return false; // Next element is not -1, so it's a happy feeling
+            if (position < array.length - 1) {  //10
+                int next = array[position + 1]; //11
+                if(next != 1) //12
+                return false;//13  // Next element is not -1, so it's a happy feeling
             } else {
-                return false; // Last element, so it's a happy feeling
+                return false;//14 // Last element, so it's a happy feeling
             }
         }
 
@@ -54,24 +54,28 @@ public class HappyFeelings {
 
 
     public static int[] InsertHappyFeelings(int[] array, int position) {
+
+
+
         int[] newArray = new int[array.length + 2];
 
         for (int i = 0; i < position; i++) {
             newArray[i] = array[i];
         }
-
-
         newArray[position] = 1;
         newArray[position + 1] = -1;
-
         newArray[position + 2] = 1;
 
         for (int i = position + 1; i < array.length; i++) {
-            newArray[i + 2] = array[i];
+            newArray[i+2] = array[i];
         }
 
-        return newArray;
-    }
+
+            return newArray;
+        }
+
+
+
 
 
     public static int[] BeHappy(int[] array) {
@@ -93,6 +97,7 @@ public class HappyFeelings {
             }
 
             if (!CheckNeighbours(array, start)) {
+
                 array = InsertHappyFeelings(array, start);
             }
         }

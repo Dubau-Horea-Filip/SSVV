@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
-public class FindSadFeelingTest {
+public class BlackBox_FindSadFeelingTest {
 
     @Test
     void testFindSadFeeling_PositionWithSadFeeling() {
@@ -40,6 +37,19 @@ public class FindSadFeelingTest {
     }
 
     @Test
+    void testFindSadFeeling_PositionBeyondArrayLengthoutofbounds() {
+        // Test array with sad (-1), neutral (0), and happy (1) feelings
+        int[] array = {-1, -1, 0};
+
+        int start = 10;
+        int expected = -1;
+
+        int result = HappyFeelings.FindSadFeeling(array, start);
+
+        Assertions.assertEquals(expected, result);
+    }
+
+    @Test
     void testFindSadFeeling_PositionAtBeginningOfArray() {
         // Test array with sad (-1), neutral (0), and happy (1) feelings
         int[] array = {-1, -1, 0, 0, 1, 1, -1, 1, 0, -1, 1, 0, 1, 1, -1, 0, 1, 1};
@@ -48,6 +58,17 @@ public class FindSadFeelingTest {
         int expected = 0;
 
         int result = HappyFeelings.FindSadFeeling(array, start);
+
+        Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    void testFindSadFeeling_EmptysadArray() {
+        int[] emptyArray = {1,0,1,1,0,1,1};
+        int start = 0;
+        int expected = -1;
+
+        int result = HappyFeelings.FindSadFeeling(emptyArray, start);
 
         Assertions.assertEquals(expected, result);
     }

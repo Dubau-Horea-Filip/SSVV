@@ -4,7 +4,7 @@ import examen.HappyFeelings;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class CheckNeighboursTest {
+public class WhiteBox_CheckNeighboursTest {
 
     // false means we have to put 1
     // true  means  we don't have to put 1
